@@ -1,0 +1,21 @@
+<svg width="420" height="560" viewBox="0 0 420 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="210" y1="0" x2="210" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F4EF"/>
+      <stop offset="1" stop-color="#ECF3FF"/>
+    </linearGradient>
+    <linearGradient id="petals" x1="141" y1="106" x2="308" y2="284" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9CBFF3"/>
+      <stop offset="1" stop-color="#E3B9A3"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="560" rx="28" fill="url(#bg2)"/>
+  <circle cx="210" cy="280" r="114" fill="#FFFDF9"/>
+  <path d="M209 204C226 229 236 252 239 272C215 277 195 276 177 272C184 245 194 222 209 204Z" fill="#7F9DD7"/>
+  <path d="M158 253C190 252 216 258 239 271C220 287 201 299 176 306C165 286 159 270 158 253Z" fill="#E0A17F"/>
+  <path d="M264 248C249 274 235 293 214 307C244 316 269 320 293 315C292 289 284 267 264 248Z" fill="#7F9DD7"/>
+  <path d="M193 309C214 291 235 278 260 271C262 297 258 319 245 344C219 340 202 333 193 309Z" fill="#C77A61"/>
+  <path d="M179 349C203 341 224 340 246 344C236 374 223 402 208 427C193 402 184 375 179 349Z" fill="#688759"/>
+  <path d="M116 462C171 446 235 445 309 462" stroke="#A9BFE7" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132 489C180 478 228 478 285 491" stroke="#D8AD96" stroke-width="4" stroke-linecap="round"/>
+</svg>

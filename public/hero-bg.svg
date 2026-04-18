@@ -1,0 +1,32 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9F1FF"/>
+      <stop offset="0.52" stop-color="#BFD4F7"/>
+      <stop offset="1" stop-color="#F5E6DA"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="632" y1="648" x2="1038" y2="1077" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FB2F1"/>
+      <stop offset="1" stop-color="#4675C7"/>
+    </linearGradient>
+    <linearGradient id="cliff" x1="1159" y1="477" x2="1239" y2="1088" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A66536"/>
+      <stop offset="1" stop-color="#6B3515"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#sky)"/>
+  <circle cx="1197" cy="245" r="92" fill="#FFF6D8" fill-opacity="0.86"/>
+  <path d="M0 712C191 659 283 653 480 707C687 764 803 811 1070 753C1285 707 1422 709 1600 762V1200H0V712Z" fill="url(#sea)"/>
+  <path d="M1287 481C1363 464 1460 486 1600 560V1200H1038C1087 1061 1116 988 1147 885C1178 779 1208 633 1287 481Z" fill="url(#cliff)"/>
+  <path d="M0 878C162 824 333 821 500 863C676 907 774 965 955 934C1111 906 1210 837 1342 839C1451 841 1549 882 1600 909V1200H0V878Z" fill="#F7D9C7" fill-opacity="0.5"/>
+  <path d="M1045 806C1129 763 1160 675 1187 560C1237 636 1264 721 1292 823C1241 841 1165 850 1045 806Z" fill="#DAB295" fill-opacity="0.84"/>
+  <g opacity="0.6">
+    <path d="M128 1016C165 956 180 903 172 839C235 884 256 945 249 1013C228 1036 205 1052 182 1066C165 1054 147 1037 128 1016Z" fill="#AEC8F5"/>
+    <path d="M244 1035C274 990 284 938 278 888C327 922 341 968 336 1021C319 1038 301 1050 283 1060C270 1052 257 1044 244 1035Z" fill="#97B8F0"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.38" stroke-width="3">
+    <path d="M1429 305C1397 353 1378 407 1373 460"/>
+    <path d="M1465 336C1434 370 1410 421 1403 475"/>
+    <path d="M1494 384C1467 416 1446 455 1437 500"/>
+  </g>
+</svg>
