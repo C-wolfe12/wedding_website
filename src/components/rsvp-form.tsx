@@ -19,13 +19,6 @@ type FormState = {
   message: string;
 };
 
-type Stats = {
-  totalResponses: number;
-  attendingParties: number;
-  confirmedGuests: number;
-  declinedResponses: number;
-};
-
 const initialFormState: FormState = {
   name: "",
   email: "",
@@ -109,7 +102,7 @@ export default function RSVPForm() {
         setSubmitted(false);
         setNotice({
           type: "success",
-          message: result.message,
+          message: result.message ?? "Thank you. Your RSVP has been received.",
         });
       } catch {
         setNotice({
