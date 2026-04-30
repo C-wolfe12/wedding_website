@@ -1,6 +1,6 @@
 # Hugeoleen & Carl Wedding Website
 
-This is a Next.js wedding website for Hugeoleen and Carl with a full one-page experience, embedded directions, travel information, registry details, and a persistent RSVP system.
+This is a Next.js wedding website for Me and my wife with a full one-page experience, embedded directions, travel information, registry details, and a persistent RSVP system.
 
 ## Features
 
