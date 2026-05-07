@@ -4,7 +4,7 @@ import { CheckCircle, Users, AlertCircle } from 'lucide-react';
 import { useRSVPForm } from '@/src/hooks/useRSVPForm';
 
 /**
- * RSVP section component - handles guest RSVPs with Postgres-backed API integration
+ * RSVP section component - handles guest RSVPs with API integration
  */
 export default function RSVP(): React.JSX.Element {
   const { formData, loading, success, successMessage, error, handleChange, handleSubmit } = useRSVPForm();

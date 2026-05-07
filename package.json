@@ -12,14 +12,13 @@
   },
   "dependencies": {
     "lucide-react": "^1.14.0",
+    "mysql2": "^3.22.3",
     "next": "^15.0.0",
-    "pg": "^8.20.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/node": "20.19.39",
-    "@types/pg": "^8.20.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "^19.2.2",
     "autoprefixer": "^10.4.18",

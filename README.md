@@ -21,12 +21,17 @@ Open `http://localhost:3000`.
 
 ## RSVP Storage
 
-RSVP entries are stored in a local NeDB datastore under the `data/` directory at runtime. That directory is ignored by Git.
+RSVP entries are stored in MySQL via the `/api/rsvp` route.
+
+Set either `MYSQL_URL` (recommended) or `DATABASE_URL`, then run migrations:
+
+```bash
+npm run db:migrate
+```
 
 ## Main Stack
 
 - Next.js App Router
 - React 19
 - TypeScript
-- Zod for validation
-- nedb-promises for local persistent storage
+- MySQL (`mysql2`)

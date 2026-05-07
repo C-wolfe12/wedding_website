@@ -2,9 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
-import pg from 'pg';
-
-const { Pool } = pg;
+import mysql from 'mysql2/promise';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -54,24 +52,39 @@ async function loadEnvFile(filePath) {
 await loadEnvFile(path.join(rootDir, '.env.local'));
 await loadEnvFile(path.join(rootDir, '.env'));
 
-const connectionString = process.env.POSTGRES_URL ?? process.env.DATABASE_URL;
+const connectionString = process.env.MYSQL_URL ?? process.env.DATABASE_URL;
 
 if (!connectionString) {
-  console.warn('[db:migrate] POSTGRES_URL/DATABASE_URL is not set. Skipping migrations.');
+  console.warn('[db:migrate] MYSQL_URL/DATABASE_URL is not set. Skipping migrations.');
   process.exit(0);
 }
 
-const useSsl = process.env.POSTGRES_SSL !== 'false';
-const pool = new Pool({
-  connectionString,
-  ssl: useSsl ? { rejectUnauthorized: false } : false,
+function getMySqlSslConfig() {
+  if (process.env.MYSQL_SSL !== 'true') {
+    return undefined;
+  }
+
+  const ca = process.env.MYSQL_SSL_CA?.replace(/\\n/g, '\n');
+
+  return {
+    ca,
+    rejectUnauthorized: process.env.MYSQL_SSL_REJECT_UNAUTHORIZED !== 'false',
+  };
+}
+
+const pool = mysql.createPool({
+  uri: connectionString,
+  waitForConnections: true,
+  connectionLimit: 10,
+  multipleStatements: true,
+  ssl: getMySqlSslConfig(),
 });
 
 async function ensureMigrationsTable(client) {
   await client.query(`
     CREATE TABLE IF NOT EXISTS schema_migrations (
-      id text PRIMARY KEY,
-      applied_at timestamptz NOT NULL DEFAULT now()
+      id VARCHAR(255) PRIMARY KEY,
+      applied_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
     )
   `);
 }
@@ -85,28 +98,28 @@ async function getMigrationFiles() {
 }
 
 async function alreadyApplied(client, migrationId) {
-  const result = await client.query('SELECT 1 FROM schema_migrations WHERE id = $1', [migrationId]);
-  return result.rowCount > 0;
+  const [rows] = await client.query('SELECT 1 FROM schema_migrations WHERE id = ? LIMIT 1', [migrationId]);
+  return Array.isArray(rows) && rows.length > 0;
 }
 
 async function applyMigration(client, migrationId) {
   const migrationPath = path.join(migrationsDir, migrationId);
   const sql = await fs.readFile(migrationPath, 'utf8');
 
-  await client.query('BEGIN');
+  await client.beginTransaction();
   try {
     await client.query(sql);
-    await client.query('INSERT INTO schema_migrations (id) VALUES ($1)', [migrationId]);
-    await client.query('COMMIT');
+    await client.query('INSERT INTO schema_migrations (id) VALUES (?)', [migrationId]);
+    await client.commit();
     console.log(`[db:migrate] Applied ${migrationId}`);
   } catch (error) {
-    await client.query('ROLLBACK');
+    await client.rollback();
     throw error;
   }
 }
 
 async function run() {
-  const client = await pool.connect();
+  const client = await pool.getConnection();
   try {
     await ensureMigrationsTable(client);
     const migrationFiles = await getMigrationFiles();

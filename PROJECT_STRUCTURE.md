@@ -119,7 +119,7 @@ Update `NAV_ITEMS` in `src/constants/wedding.ts`
 - **React 19**: UI library
 - **TypeScript**: Type safety
 - **Tailwind CSS**: Styling
-- **Supabase**: Backend database
+- **MySQL**: Backend database
 - **Lucide React**: Icon library
 
 ## Development
