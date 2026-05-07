@@ -1,0 +1,15 @@
+/*
+  Create RSVP table (MySQL).
+*/
+
+CREATE TABLE IF NOT EXISTS rsvps (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  guest_name VARCHAR(120) NOT NULL,
+  email VARCHAR(254) NOT NULL,
+  phone VARCHAR(30) NULL,
+  attending BOOLEAN NOT NULL DEFAULT TRUE,
+  dietary_restrictions TEXT NULL,
+  message TEXT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
