@@ -45,9 +45,9 @@ export default function Hero(): React.JSX.Element {
             <Heart className="mx-auto mb-6 h-16 w-16 animate-pulse text-russet" />
 
             <h1 className="mb-4 font-playfair text-5xl font-bold text-white md:text-8xl">
-              <span className="block md:inline">{WEDDING_CONFIG.COUPLE_NAMES.FIRST}</span>
+              <span className="font-script block md:inline">{WEDDING_CONFIG.COUPLE_NAMES.FIRST}</span>
               <span className="block leading-none text-russet md:mx-3 md:inline">&</span>
-              <span className="block md:inline">{WEDDING_CONFIG.COUPLE_NAMES.SECOND}</span>
+              <span className="font-script block md:inline">{WEDDING_CONFIG.COUPLE_NAMES.SECOND}</span>
             </h1>
 
             <p className="mb-8 text-xl text-white/90 md:text-3xl"> forever begins here...</p>

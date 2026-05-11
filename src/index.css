@@ -19,6 +19,11 @@
 }
 
 @layer utilities {
+  .font-script {
+    font-family: var(--font-script), 'Playfair Display', serif;
+    font-weight: 400;
+  }
+
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in;
   }

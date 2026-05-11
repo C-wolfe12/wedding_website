@@ -21,9 +21,3 @@ export interface NavItem {
   name: string;
   href: string;
 }
-
-// Countdown item for display
-export interface CountdownItem {
-  label: string;
-  value: number;
-}
