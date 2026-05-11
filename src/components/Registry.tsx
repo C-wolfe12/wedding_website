@@ -117,7 +117,7 @@ export default function Registry() {
 
           <div className="relative h-80 overflow-hidden rounded-[2rem] shadow-2xl lg:sticky lg:top-28 lg:h-[34rem]">
             <Image
-              src="/LEM00077.jpg"
+              src="/photo3.jpeg"
               alt="Monetary Gift"
               fill
               quality={92}

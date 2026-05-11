@@ -16,7 +16,7 @@ export default function Travel() {
         <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)_minmax(0,0.8fr)]">
           <div className="relative h-80 overflow-hidden rounded-[2rem] shadow-2xl lg:sticky lg:top-28 lg:h-[34rem]">
             <Image
-              src="/LEM00063.jpg"
+              src="/photo6.jpeg"
               alt="Getting There"
               fill
               quality={92}
@@ -80,7 +80,7 @@ export default function Travel() {
 
           <div className="relative h-80 overflow-hidden rounded-[2rem] shadow-2xl lg:sticky lg:top-28 lg:h-[34rem]">
             <Image
-              src="/LEM00027.jpg"
+              src="/LEM00026.jpg"
               alt="Wedding travel and accommodations"
               fill
               quality={92}

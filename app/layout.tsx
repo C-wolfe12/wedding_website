@@ -1,5 +1,12 @@
 import type { Metadata } from 'next';
+import { Meie_Script } from 'next/font/google';
 import '../src/index.css';
+
+const scriptFont = Meie_Script({
+  variable: '--font-script',
+  subsets: ['latin'],
+  weight: '400',
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com';
 
@@ -32,7 +39,7 @@ interface RootLayoutProps {
  */
 export default function RootLayout({ children }: RootLayoutProps): React.JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" className={scriptFont.variable}>
       <body>{children}</body>
     </html>
   );

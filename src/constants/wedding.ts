@@ -34,8 +34,8 @@ export const HERO_CONFIG = {
 } as const;
 
 export const EVENT_DETAILS_CONFIG = {
-  CEREMONY_IMAGE: '/LEM00009.jpg',
-  RECEPTION_IMAGE: '/LEM00064.jpg',
+  CEREMONY_IMAGE: '/photo8.jpeg',
+  RECEPTION_IMAGE: '/photo9.jpeg',
   CEREMONY: {
     title: 'Ceremony',
     time: '3:00 PM - 4:00 PM',
@@ -46,11 +46,11 @@ export const EVENT_DETAILS_CONFIG = {
   },
   RECEPTION: {
     title: 'Reception',
-    time: '6:00 PM - 11:00 PM',
+    time: '6:00 PM - 9:00 PM',
     venueArea: 'Villa Viento',
     venueName: VILLA_VIENTO_LOCATION,
     description:
-      'Cocktail hour begins at 4:00 PM, dinner service follows at 7:00 PM, and then we dance the night away.',
+      'Cocktail hour begins at 4:00 PM, dinner service follows at 7:00 PM, all formalities conclude at 9:00 PM, and then we dance the night away until midnight.',
   },
   DRESS_CODE: {
     title: 'Dress Code',
@@ -110,45 +110,6 @@ export const WEDDING_PARTY_CONTACTS = [
     phone: '(876) 842-8908',
   },
 ] as const;
-
-// Countdown timer labels
-export const COUNTDOWN_LABELS = ['Days', 'Hours', 'Minutes', 'Seconds'] as const;
-
-// RSVP form fields configuration
-export const RSVP_FORM_FIELDS = {
-  GUEST_NAME: {
-    id: 'guest_name',
-    label: 'Full Name',
-    placeholder: 'John Doe',
-    required: true,
-  },
-  EMAIL: {
-    id: 'email',
-    label: 'Email Address',
-    placeholder: 'john@example.com',
-    required: true,
-    type: 'email',
-  },
-  PHONE: {
-    id: 'phone',
-    label: 'Phone Number',
-    placeholder: '(123) 456-7890',
-    required: false,
-    type: 'tel',
-  },
-  DIETARY_RESTRICTIONS: {
-    id: 'dietary_restrictions',
-    label: 'Dietary Restrictions (if any)',
-    placeholder: 'e.g., Vegetarian, Gluten-free',
-    required: false,
-  },
-  MESSAGE: {
-    id: 'message',
-    label: 'Additional Message',
-    placeholder: 'Share your thoughts...',
-    required: false,
-  },
-} as const;
 
 export const INITIAL_RSVP_FORM_STATE: RSVPFormData = {
   guest_name: '',

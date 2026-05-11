@@ -13,9 +13,11 @@
   "dependencies": {
     "lucide-react": "^1.14.0",
     "mysql2": "^3.22.3",
+    "nedb-promises": "^6.2.3",
     "next": "^15.0.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "20.19.39",
